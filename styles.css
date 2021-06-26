@@ -1,0 +1,182 @@
+:root {
+    --board-width_height: min(80vh, 80vw);
+    --seperator-color: rgb(58, 58, 58);
+    --seperator-size: 3px;
+    --square-color: rgb(235, 235, 235);
+    --square-color: white;
+}
+
+#game-screen {
+    position: relative;
+    width: var(--board-width_height);
+    height: var(--board-width_height);
+    margin: auto;
+}
+
+#player1 {
+    display: inline;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, calc(var(--board-width_height)/3));
+    grid-template-rows: repeat(3, calc(var(--board-width_height)/3));
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+}
+
+.wrapper {
+    position: absolute;
+    margin: auto;
+    width: var(--board-width_height);
+    height: var(--board-width_height);
+    z-index: 50;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.145);
+}
+
+.wrapper.won {
+    position: absolute;
+    width: var(--board-width_height);
+    height: var(--board-width_height);
+    z-index: 50;
+    visibility: visible;
+}
+
+.prompt-play {
+    margin: auto;
+    width: calc(var(--board-width_height)/2);
+    margin: calc(var(--board-width_height)/4) calc(var(--board-width_height)/4);
+    background-color: red;
+    font-size: calc(var(--board-width_height)/6.0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.549);
+    color: rgb(70, 70, 70);
+}
+
+.sq {
+    background-color: var(--square-color);
+    position: relative;
+    border: var(--seperator-size) solid var(--seperator-color);
+}
+
+.sq:hover {
+    box-shadow: 3px 3px 10px black;
+}
+
+.sq.r0.c2:hover {
+    box-shadow: 3px -3px 10px black;
+}
+
+.sq.r2.c2:hover {
+    box-shadow: 3px 3px 10px black;
+}
+
+.sq.r0 {
+    border-top: 0px;
+}
+
+.sq.r2 {
+    border-bottom: 0px;
+}
+
+.sq.c0 {
+    border-left: 0px;
+}
+
+.sq.c2 {
+    border-right: 0px;
+}
+
+.sq.r0.c0:hover {
+    box-shadow: -3px -3px 10px black;
+}
+
+.sq.r2.c0:hover {
+    box-shadow: -3px 3px 10px black;
+}
+
+
+/* .square.rm-vertical {
+    border-left: var(--seperator-size) solid var(--seperator-color);
+    border-right: var(--seperator-size) solid var(--seperator-color);
+}
+
+.square.rm-horizontal {
+    border-top: var(--seperator-size) solid var(--seperator-color);
+    border-bottom: var(--seperator-size) solid var(--seperator-color);
+}
+
+.square.full {
+    border: var(--seperator-size) solid var(--seperator-color);
+} */
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.mark {
+    position: relative;
+    text-align: center;
+    font-size: calc(var(--board-width_height)/4.0);
+    width: 100%;
+    height: 100%;
+    text-shadow: 2px 2px 5px black;
+}
+
+.win .mark {
+    text-shadow: 4px 4px 10px black;
+    font-size: calc(var(--board-width_height)/3.9);
+}
+
+.sq.win {
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    background-color: rgba(11, 240, 11, 0.919);
+}
+
+.mark .tran {
+    animation: 1s fade-in forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    30% {
+        color: rgba(116, 116, 116, 0.145);
+    }
+    60% {
+        color: rgba(116, 116, 116, 0.145);
+        opacity: .5;
+        text-shadow: 10px 10px 10px white;
+    }
+    100% {
+        opacity: 1;
+        font-size: 8rem;
+        color: black;
+    }
+}
+
+
+/* 
+.square.rm-vertical {
+    border-left: var(--seperator-size) solid var(--seperator-color);
+    border-right: var(--seperator-size) solid var(--seperator-color);
+}
+
+.square.rm-horizontal {
+    border-top: var(--seperator-size) solid var(--seperator-color);
+    border-bottom: var(--seperator-size) solid var(--seperator-color);
+}
+
+.square.full {
+    border: var(--seperator-size) solid var(--seperator-color);
+} */
