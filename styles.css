@@ -1,16 +1,83 @@
 :root {
-    --board-width_height: min(80vh, 80vw);
+    --board-width_height: max(min(75vh, 75vw), 200px);
     --seperator-color: rgb(58, 58, 58);
     --seperator-size: 3px;
     --square-color: rgb(235, 235, 235);
     --square-color: white;
 }
 
+header {
+    display: inline;
+}
+
+header h1 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+}
+
+header .players {
+    position: absolute;
+    right: -30px;
+    top: 0;
+}
+
+header .players>* {
+    margin-top: 0;
+}
+
+.players i {
+    display: inline;
+    font-size: 1.25rem;
+    width: 10px;
+    color: rgba(128, 128, 128, 0.116);
+    text-shadow: 1px 1px 1px white;
+}
+
+.players i:hover {
+    color: rgb(182, 13, 13);
+}
+
+.p1 {
+    margin-left: 25px;
+}
+
+.p2 {
+    display: inline-block;
+}
+
+p2 .div {
+    width: 10px
+}
+
+.p2 span {
+    margin-left: 5px
+}
+
+.players span {
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 1px 1px 2px black;
+    font-size: 1.5rem;
+    display: inline;
+}
+
+.players input {
+    font-size: 1.2rem;
+    border: 0px;
+    width: 160px;
+    color: rgb(123, 123, 123);
+}
+
+.player input:active,
+.players input:focus {
+    border: 0px;
+    outline: 0px;
+}
+
 #game-screen {
     position: relative;
     width: var(--board-width_height);
     height: var(--board-width_height);
-    margin: auto;
+    margin: 25% auto;
 }
 
 #player1 {
@@ -54,6 +121,7 @@
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.549);
     color: rgb(70, 70, 70);
+    font-family: 'Indie Flower', cursive;
 }
 
 .sq {
@@ -180,3 +248,27 @@
 .square.full {
     border: var(--seperator-size) solid var(--seperator-color);
 } */
+
+@media screen and (min-width: 625px) {
+     :root {
+        --board-width_height: max(min(80vh, 80vw), 300px);
+    }
+    #game-screen {
+        margin: 20% auto;
+    }
+    header h1 {
+        font-size: 3rem;
+    }
+    header .players {
+        right: 0px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+     :root {
+        --board-width_height: max(min(80vh, 80vw), 400px);
+    }
+    #game-screen {
+        margin: 3% auto;
+    }
+}
