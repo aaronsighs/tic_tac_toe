@@ -6,6 +6,20 @@
     --square-color: white;
 }
 
+
+* {
+    user-select: none;
+}
+
+*::selection {
+    background: none;
+}
+
+*::-moz-selection {
+    background: none;
+}
+
+
 header {
     display: inline;
 }
